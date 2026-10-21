@@ -1,181 +1,312 @@
 <!DOCTYPE html>
-2
-<html>
-3
+<html lang="en">
 <head>
-4
-<title>Piyush Salunke Portfolio</title>
-5
- 
-6
-<style>
-7
-body {
-8
-font-family: Arial, sans-serif;
-9
-background-color: #f4f4f4;
-10
-margin: 0;
-11
-padding: 0;
-12
-}
-13
- 
-14
-.container {
-15
-width: 80%;
-16
-margin: auto;
-17
-background: white;
-18
-padding: 30px;
-19
-margin-top: 30px;
-20
-border-radius: 10px;
-21
-}
-22
- 
-23
-h1 {
-24
-color: #0078D4;
-25
-}
-26
- 
-27
-h2 {
-28
-border-bottom: 2px solid #0078D4;
-29
-padding-bottom: 5px;
-30
-}
-31
- 
-32
-ul {
-33
-line-height: 1.8;
-34
-}
-35
-</style>
-36
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Piyush Somnath Salunke — Business Intelligence, Excel VBA, Power BI and RPA Automation." />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Piyush Salunke | BI & Automation Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020; --panel: #121a2e; --panel-2: #17223a;
+      --text: #eef3ff; --muted: #a7b4cc; --line: rgba(190,205,235,.15);
+      --accent: #76e4c3; --accent-2: #8da8ff; --shadow: 0 18px 55px rgba(0,0,0,.22);
+      --radius: 20px; --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text); background:
+        radial-gradient(ellipse at 15% 0%, rgba(82,113,211,.16), transparent 34%),
+        radial-gradient(ellipse at 90% 12%, rgba(67,215,173,.09), transparent 28%), var(--bg);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-wrap { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); background: rgba(11,16,32,.82); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.05rem; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover, .text-link:hover { color: var(--accent); }
+    .menu-toggle { display: none; background: transparent; border: 1px solid var(--line); color: var(--text); padding: 8px 12px; border-radius: 10px; }
+    .hero { padding: 92px 0 72px; display: grid; grid-template-columns: 1.4fr .8fr; gap: 48px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--accent); font-size: .83rem; font-weight: 700; background: rgba(118,228,195,.06); }
+    .pulse { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 5px rgba(118,228,195,.1); }
+    h1 { font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.04; letter-spacing: -.065em; margin: 22px 0; }
+    h1 .gradient { background: linear-gradient(100deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 650px; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 12px 17px; border-radius: 12px; font-weight: 750; border: 1px solid var(--line); transition: transform .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .btn.primary { color: #07150f; background: var(--accent); border-color: transparent; }
+    .hero-card { padding: 26px; border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(145deg, rgba(23,34,58,.96), rgba(18,26,46,.85)); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .hero-card::before { content: ""; position: absolute; width: 180px; height: 180px; border-radius: 50%; background: rgba(118,228,195,.08); top: -75px; right: -65px; }
+    .monogram { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 22px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #091322; font-size: 1.6rem; font-weight: 900; letter-spacing: -.06em; margin-bottom: 22px; }
+    .hero-card h2 { margin: 0 0 4px; font-size: 1.25rem; }
+    .hero-card .role { color: var(--muted); font-size: .94rem; margin-bottom: 20px; }
+    .mini-stat { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+    .mini-stat strong { color: var(--accent); }
+    section { padding: 58px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 26px; }
+    .kicker { color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h2.section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.045em; line-height: 1.15; margin: 8px 0 0; }
+    .section-desc { color: var(--muted); max-width: 540px; margin: 0; }
+    .grid { display: grid; gap: 18px; }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat, .card, .skill-group, .timeline-item, .contact-card { background: rgba(18,26,46,.78); border: 1px solid var(--line); border-radius: var(--radius); }
+    .stat { padding: 22px; }
+    .stat strong { display: block; font-size: 2rem; letter-spacing: -.05em; color: var(--accent); line-height: 1.2; }
+    .stat span { display: block; color: var(--muted); margin-top: 8px; font-size: .92rem; }
+    .projects { grid-template-columns: repeat(2, 1fr); }
+    .card { padding: 24px; transition: transform .2s, border-color .2s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(118,228,195,.45); }
+    .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+    .project-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; background: rgba(141,168,255,.12); font-size: 1.3rem; }
+    .tag { display: inline-flex; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 9px; font-size: .75rem; white-space: nowrap; }
+    .card h3 { font-size: 1.15rem; margin: 18px 0 8px; }
+    .card p { color: var(--muted); margin: 0 0 16px; font-size: .95rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .chip { color: #c9d5eb; background: rgba(141,168,255,.08); border: 1px solid rgba(141,168,255,.15); padding: 5px 9px; border-radius: 8px; font-size: .78rem; }
+    .note { margin-top: 20px; color: var(--muted); font-size: .88rem; padding: 14px 16px; border-left: 3px solid var(--accent-2); background: rgba(141,168,255,.06); border-radius: 0 10px 10px 0; }
+    .skills { grid-template-columns: repeat(3, 1fr); }
+    .skill-group { padding: 22px; }
+    .skill-group h3 { margin: 0 0 14px; font-size: 1rem; }
+    .skill-group .chips { gap: 8px; }
+    .timeline { display: grid; gap: 14px; }
+    .timeline-item { padding: 22px 24px; display: grid; grid-template-columns: 190px 1fr; gap: 22px; }
+    .timeline-date { color: var(--accent); font-size: .86rem; font-weight: 750; }
+    .timeline-item h3 { margin: 0 0 3px; font-size: 1.08rem; }
+    .timeline-item .company { color: var(--muted); font-size: .9rem; margin-bottom: 10px; }
+    .timeline-item ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: .92rem; }
+    .timeline-item li + li { margin-top: 5px; }
+    .education { grid-template-columns: repeat(2, 1fr); }
+    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+    .contact-card { padding: 26px; }
+    .contact-card p { color: var(--muted); }
+    .contact-links { display: grid; gap: 10px; }
+    .contact-links a { display: flex; justify-content: space-between; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); overflow-wrap: anywhere; }
+    .contact-links a:hover { border-color: var(--accent); color: var(--text); }
+    footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted); font-size: .85rem; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .text-link { color: var(--accent); font-weight: 700; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding-top: 62px; gap: 30px; }
+      .hero-card { max-width: 560px; }
+      .skills { grid-template-columns: repeat(2, 1fr); }
+      .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 18px 20px 22px; background: #0b1020; border-bottom: 1px solid var(--line); flex-direction: column; align-items: start; }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .stats, .projects, .skills, .education, .contact { grid-template-columns: 1fr; }
+      section { padding: 42px 0; }
+      .section-head { align-items: start; flex-direction: column; }
+      .card, .skill-group, .contact-card { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
 </head>
-37
- 
-38
 <body>
-39
- 
-40
-<div class="container">
-41
- 
-42
-<h1>Piyush Salunke</h1>
-43
- 
-44
-<h3>Specialist - Business Intelligence</h3>
-45
- 
-46
-<p>
-47
-Passionate Business Intelligence professional with expertise in
-48
-Power BI, SQL, DAX, Excel and Data Analytics.
-49
-</p>
-50
- 
-51
-<h2>Skills</h2>
-52
- 
-53
-<ul>
-54
-<li>Power BI</li>
-55
-<li>SQL</li>
-56
-<li>DAX</li>
-57
-<li>Power Query</li>
-58
-<li>Excel</li>
-59
-<li>Python</li>
-60
-</ul>
-61
- 
-62
-<h2>Projects</h2>
-63
- 
-64
-<ul>
-65
-<li>Executive KPI Dashboard</li>
-66
-<li>Sales Analytics Dashboard</li>
-67
-<li>Customer Insights Reporting</li>
-68
-<li>Forecasting Solutions</li>
-69
-</ul>
-70
- 
-71
-<h2>Experience</h2>
-72
- 
-73
-<p>
-74
-Specialist - Business Intelligence
-75
-</p>
-76
- 
-77
-<h2>Contact</h2>
-78
- 
-79
-<p>Email: your-email@email.com</p>
-80
- 
-81
-<p>
-82
-LinkedIn:
-83
-<a href="https://linkedin.com/in/yourprofile">
-84
-linkedin.com/in/yourprofile
-85
-</a>
-86
-</p>
-87
- 
-88
-</div>
-89
- 
-90
+  <div class="nav-wrap">
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#home">Piyush Salunke<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a>
+        <a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <header class="container hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> BUSINESS INTELLIGENCE · AUTOMATION</div>
+        <h1>Hi, I'm Piyush.<br /><span class="gradient">I turn processes into insights.</span></h1>
+        <p>
+          Business Intelligence and Automation professional focused on Excel VBA, Power BI,
+          Power Automate and UiPath. I build practical solutions that reduce manual work,
+          improve reporting, and help teams make better decisions.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="btn" href="https://www.linkedin.com/in/piyush-salunke-313717116/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <!-- Add your GitHub username below and replace YOUR_GITHUB_USERNAME in the URL. -->
+          <a class="btn" href="https://github.com/PiyushSalunke-GH" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Profile summary">
+        <div class="monogram" aria-hidden="true">PS</div>
+        <h2>Piyush Somnath Salunke</h2>
+        <div class="role">BI & Automation Developer · Pune, India</div>
+        <div class="mini-stat"><span>VBA automation solutions</span><strong>70+</strong></div>
+        <div class="mini-stat"><span>User-reported issues reduced</span><strong>60%</strong></div>
+        <div class="mini-stat"><span>Core focus</span><strong>BI + RPA</strong></div>
+      </aside>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">About me</div><h2 class="section-title">Automation with a business mindset.</h2></div>
+          <p class="section-desc">I connect business requirements with reliable automation and clear reporting.</p>
+        </div>
+        <div class="grid stats">
+          <div class="stat"><strong>70+</strong><span>Business process automations implemented using Excel VBA.</span></div>
+          <div class="stat"><strong>60%</strong><span>Reduction in user-reported issues in a VBA Developer role.</span></div>
+          <div class="stat"><strong>End-to-end</strong><span>Experience across requirements, testing, reporting and stakeholder support.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Selected work</div><h2 class="section-title">Projects & solutions</h2></div>
+          <p class="section-desc">Examples based on projects described in my professional experience. Add public demo links or sanitized screenshots when available.</p>
+        </div>
+        <div class="grid projects">
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">📊</div><span class="tag">Business Intelligence</span></div>
+            <h3>GCC Headcount Dashboard</h3>
+            <p>Power BI dashboard project focused on presenting headcount information for reporting and stakeholder visibility.</p>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">Data Visualization</span><span class="chip">Reporting</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">⚙️</div><span class="tag">Excel Automation</span></div>
+            <h3>Excel VBA Automation Suite</h3>
+            <p>Implemented 70+ business process automations involving Outlook, PDF, HTML and TXT files; maintained existing macros and fixed bugs.</p>
+            <div class="chips"><span class="chip">Excel VBA</span><span class="chip">Outlook</span><span class="chip">PDF / HTML / TXT</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">🤖</div><span class="tag">RPA</span></div>
+            <h3>ICV Template Automation</h3>
+            <p>UiPath workflow to prepare Excel ICV templates, upload them to an e-BPM tool, validate processing status and report results to users.</p>
+            <div class="chips"><span class="chip">UiPath</span><span class="chip">Excel</span><span class="chip">Status Validation</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">🧾</div><span class="tag">Finance Automation</span></div>
+            <h3>Fixed Assets Roll Forward</h3>
+            <p>UiPath process to update transactions from an Excel transaction file with the corresponding transaction types in OneStream and notify users of status.</p>
+            <div class="chips"><span class="chip">UiPath</span><span class="chip">Excel</span><span class="chip">OneStream</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">🔄</div><span class="tag">Workflow Automation</span></div>
+            <h3>Central Redeployment Tracker</h3>
+            <p>Power Automate project to support tracker-related process workflows and improve the coordination of information.</p>
+            <div class="chips"><span class="chip">Power Automate</span><span class="chip">Process Tracking</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">☁️</div><span class="tag">Data Workflow</span></div>
+            <h3>Power BI Data Export Workflow</h3>
+            <p>Workflow to export underlying data for Open Reqs from a Power BI dashboard to an Excel file hosted on SharePoint.</p>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">SharePoint</span><span class="chip">Excel</span></div>
+          </article>
+        </div>
+        <div class="note">Confidentiality note: keep employer data, internal screenshots, credentials, and proprietary code out of public repositories. Use synthetic sample data for demonstrations.</div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Toolkit</div><h2 class="section-title">Skills & technologies</h2></div>
+          <p class="section-desc">Grouped by the tools and capabilities reflected in my current experience.</p>
+        </div>
+        <div class="grid skills">
+          <div class="skill-group"><h3>Data & Reporting</h3><div class="chips"><span class="chip">Power BI</span><span class="chip">Excel Dashboards</span><span class="chip">Pivot Tables</span><span class="chip">Data Visualization</span><span class="chip">Workday Reporting</span></div></div>
+          <div class="skill-group"><h3>Automation</h3><div class="chips"><span class="chip">Excel VBA</span><span class="chip">UiPath RPA</span><span class="chip">Power Automate</span><span class="chip">Microsoft Forms</span><span class="chip">Power Apps</span></div></div>
+          <div class="skill-group"><h3>Analysis & Productivity</h3><div class="chips"><span class="chip">Advanced Excel</span><span class="chip">Logical Formulas</span><span class="chip">Conditional Formulas</span><span class="chip">Financial Formulas</span><span class="chip">Testing & Debugging</span></div></div>
+          <div class="skill-group"><h3>Business Collaboration</h3><div class="chips"><span class="chip">Requirements Gathering</span><span class="chip">Stakeholder Management</span><span class="chip">User Support</span><span class="chip">Knowledge Sharing</span></div></div>
+          <div class="skill-group"><h3>Learning / Developing</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Advanced Power BI / DAX</span></div></div>
+          <div class="skill-group"><h3>Tools & Platforms</h3><div class="chips"><span class="chip">Outlook</span><span class="chip">SharePoint</span><span class="chip">OneStream</span><span class="chip">Workday</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Career</div><h2 class="section-title">Professional experience</h2></div>
+          <p class="section-desc">Experience spanning business intelligence, automation development, CRM and customer relations.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Dec 2025 – Present</div>
+            <div><h3>Specialist – Business Intelligence</h3><div class="company">Flexibility HR Solutions Pvt. Ltd. · A subsidiary of Alexander Mann Solutions</div><ul><li>Streamline processes using Excel VBA, Power Automate, Microsoft Forms and Power Apps.</li><li>Schedule and maintain Workday reports, manage access and create calculated fields as needed.</li><li>Build Power BI dashboards, maintain workspaces and resolve stakeholder queries.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Jan 2024 – Dec 2025</div>
+            <div><h3>VBA Developer – IT</h3><div class="company">Flextronics (India) Technologies Pvt. Ltd.</div><ul><li>Automated Finance department processes using Excel VBA and UiPath.</li><li>Contributed to a 60% decrease in user-reported issues through testing and debugging.</li><li>Worked with stakeholders and mentored citizen developers.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Feb 2023 – Jan 2024</div>
+            <div><h3>Automation Developer</h3><div class="company">Genius Consultancy Ltd. · Client: Flextronics</div><ul><li>Optimized Finance process automation through Excel and VBA.</li><li>Testing and debugging contributed to a 30% decrease in user-reported issues.</li><li>Gathered requirements and coordinated project expectations with stakeholders.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Aug 2022 – Jan 2023</div>
+            <div><h3>CRM</h3><div class="company">GADA GROUP</div><ul><li>Tracked project details, payments and agreements using advanced Excel.</li><li>Generated reports, coordinated with internal teams and resolved customer queries.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Dec 2021 – May 2022</div>
+            <div><h3>CRM</h3><div class="company">THE EXCELLAA</div><ul><li>Managed project tracking, payment agreements and reporting.</li><li>Coordinated with customers and internal teams and supported real-estate sales operations.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Dec 2020 – Nov 2021</div>
+            <div><h3>Executive – Customer Relations</h3><div class="company">HDFC Sales Private Limited</div><ul><li>Assisted home-loan seekers, supported insurance cross-selling and organized team data with Excel.</li></ul></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Education</div><h2 class="section-title">Academic background</h2></div></div>
+        <div class="grid education">
+          <div class="card"><span class="tag">2015</span><h3>B.E. – Mechanical Engineering</h3><p>NBN Sinhgad School of Engineering, Pune · Savitribai Phule Pune University</p></div>
+          <div class="card"><span class="tag">2012</span><h3>Diploma – Mechanical Engineering</h3><p>S.V.C.P., Pune · MSBTE</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Get in touch</div><h2 class="section-title">Let's build something useful.</h2></div></div>
+        <div class="contact">
+          <div class="contact-card">
+            <h3>Open to opportunities</h3>
+            <p>Interested in Business Intelligence, reporting, Excel VBA development, RPA and workflow automation opportunities.</p>
+            <a class="btn primary" href="mailto:piyush.salunke94@gmail.com">Email me ↗</a>
+          </div>
+          <div class="contact-card contact-links">
+            <a href="mailto:piyush.salunke94@gmail.com"><span>Email</span><strong>↗</strong></a>
+            <a href="https://www.linkedin.com/in/piyush-salunke-313717116/" target="_blank" rel="noopener noreferrer"><span>LinkedIn profile</span><strong>↗</strong></a>
+            <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer"><span>GitHub profile — update username</span><strong>↗</strong></a>
+            <a href="#home"><span>Back to top</span><strong>↑</strong></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><span>© <span id="year"></span> Piyush Somnath Salunke</span><span>Built with HTML, CSS & a focus on useful automation.</span></div></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-91
 </html>
