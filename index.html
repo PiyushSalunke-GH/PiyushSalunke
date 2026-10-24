@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Piyush Somnath Salunke — Business Intelligence, Excel VBA, Power BI and RPA Automation." />
-  <meta name="theme-color" content="#0b1020" />
+  <meta name="theme-color" content="#f5f7fb" />
   <title>Piyush Salunke | BI & Automation Portfolio</title>
   <style>
     :root {
@@ -109,6 +109,67 @@
       .card, .skill-group, .contact-card { padding: 20px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+
+    /* Light theme: clean slate, soft blue surfaces, and restrained teal accents */
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --panel-2: #edf2fa;
+      --text: #172033;
+      --muted: #5d6b82;
+      --line: #dce4ef;
+      --accent: #087f8c;
+      --accent-2: #5368c5;
+      --shadow: 0 16px 42px rgba(28, 48, 80, .09);
+    }
+    body {
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 12% 0%, rgba(83,104,197,.09), transparent 34%),
+        radial-gradient(ellipse at 90% 12%, rgba(8,127,140,.07), transparent 28%),
+        var(--bg);
+    }
+    .nav-wrap { background: rgba(245,247,251,.9); }
+    .nav-links { color: var(--muted); }
+    .nav-links a:hover, .text-link:hover { color: var(--accent-2); }
+    .menu-toggle { color: var(--text); background: #fff; }
+    .eyebrow { color: var(--accent); background: rgba(8,127,140,.06); }
+    .pulse { background: var(--accent); box-shadow: 0 0 0 5px rgba(8,127,140,.10); }
+    h1 .gradient { background-image: linear-gradient(100deg, #087f8c, #5368c5); }
+    .btn { color: var(--text); background: rgba(255,255,255,.8); }
+    .btn.primary { color: #fff; background: #087f8c; border-color: #087f8c; }
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f0f4fb);
+      border-color: #dce4ef;
+    }
+    .hero-card::before { background: rgba(8,127,140,.08); }
+    .monogram {
+      background: linear-gradient(135deg, #8ed8d2, #aebcf5);
+      color: #172033;
+    }
+    .mini-stat strong, .stat strong, .timeline-date { color: var(--accent); }
+    .stat, .card, .skill-group, .timeline-item, .contact-card {
+      background: rgba(255,255,255,.88);
+      border-color: var(--line);
+      box-shadow: 0 8px 26px rgba(28,48,80,.035);
+    }
+    .card:hover { border-color: rgba(8,127,140,.42); }
+    .project-icon { background: rgba(83,104,197,.09); }
+    .tag { color: #526178; background: #f8faff; border-color: #dce4ef; }
+    .chip {
+      color: #34445d;
+      background: #f0f4fb;
+      border-color: #dce5f2;
+    }
+    .note { border-left-color: var(--accent-2); background: #f0f3fc; }
+    .contact-links a { color: var(--muted); background: #fbfcff; border-color: var(--line); }
+    .contact-links a:hover { border-color: var(--accent); color: var(--text); }
+    .text-link { color: var(--accent); }
+    footer { border-top-color: var(--line); }
+    @media (max-width: 800px) {
+      .nav-links { background: #f5f7fb; }
+    }
   </style>
 </head>
 <body>
